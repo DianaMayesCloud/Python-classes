@@ -1,0 +1,25 @@
+His solution is the same as mine:
+- simply overwrite the __len__ method
+- my code is a bit better because:
+  - it is better to define constants rather than in the code (normal behavior in a production environment)
+  Here is my code:
+     # class constant, all superlists return a default len=1000
+    def_len = 1000
+    
+    def __len__(self):
+        return Superlist.def_len
+        
+- in addition his code does not handle other things. Here is an example:
+
+l = Superlist();
+l.append(1);
+l2 = l.copy()
+len(l2)      --> returns 1; oops
+
+Here, when you copy a Superlist it returns a list (unless you overwrite copy).
+Normally, a Superlist copy should be a Superlist not a list.
+So, one should overwrite more methods such as copy (which I did) and others (which I didn't);
+I added just a comment saying a correct/complete implementation should be longer.
+
+Hence, my code is longer with more methods, and there is a lot more testing.
+If you limit only to len() part they are the same (see the comment above).
