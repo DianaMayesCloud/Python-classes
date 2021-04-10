@@ -44,3 +44,7 @@ def get_oldest_cat(*args):
 
 # Output
 print(f"The oldest cat is {get_oldest_cat(peanut.age, garfield.age, snickers.age)} years old.")
+
+
+class User(object):
+  def sign_in(self):
